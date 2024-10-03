@@ -7,3 +7,6 @@ class Ligne:
 		self.direction: int = 0
 
 		self.totalDistance: float = 0.0
+
+	def ComputeDistance(self) -> float:
+		return 0.0
