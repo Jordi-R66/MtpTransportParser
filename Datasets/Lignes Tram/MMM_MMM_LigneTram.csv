@@ -1,0 +1,11 @@
+﻿id_lignes_sens,reseau,mode,nom_ligne,num_exploitation,sens,fonctionnement,code_couleur
+IDLTRAM01,Urbain,Tramway,L1 Mosson > Odysseum,1,Aller - V1,Ligne Régulière,#005CA9
+IDLTRAM02,Urbain,Tramway,L1 Odysseum > Mosson,1,Retour - V2,Ligne Régulière,#005CA9
+IDLTRAM03,Urbain,Tramway,L2 Saint-Jean de Védas Centre > Jacou,2,Aller - V1,Ligne Régulière,#EF7D00
+IDLTRAM04,Urbain,Tramway,L2 Jacou > Saint-Jean de Védas Centre,2,Retour - V2,Ligne Régulière,#EF7D00
+IDLTRAM05,Urbain,Tramway,L3 Pérols Étang de l'Or > Juvignac,3,Aller - V2,Ligne Régulière,#C8D400
+IDLTRAM06,Urbain,Tramway,L3 Juvignac > Lattes Centre,3,Retour - V1,Ligne Régulière,#C8D400
+IDLTRAM07,Urbain,Tramway,L3 Juvignac - Pérols Étang de l'Or,3,Retour - V1,Ligne Régulière,#C8D400
+IDLTRAM08,Urbain,Tramway,L3 Lattes Centre > Juvignac,3,Aller - V2,Ligne Régulière,#C8D400
+IDLTRAM09,Urbain,Tramway,L4 Garcia Lorca > Garcia Lorca A,4,Aller - V1,Ligne Régulière,#4B2A0E
+IDLTRAM10,Urbain,Tramway,L4 Garcia Lorca > Garcia Lorca B,4,Retour - V2,Ligne Régulière,#4B2A0E
