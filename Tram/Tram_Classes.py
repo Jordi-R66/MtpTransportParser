@@ -24,7 +24,7 @@ class Ligne:
 		self.totalLength = distance
 
 	def __str__(self) -> str:
-		output: str = f"Ligne(\n\ttrack: {len(self.track)} points\n\tNumExploit={self.NumExploit}\n\tLigneID={self.LigneID}\n\tDirection={self.direction}\n\ttotalLength={self.totalLength}\n)"
+		output: str = f"Ligne(\n\tNomLigne={self.NomLigne}\n\ttrack size: {len(self.track)} points\n\tNumExploit={self.NumExploit}\n\tLigneID={self.LigneID}\n\tDirection={self.direction}\n\ttotalLength={self.totalLength}\n)"
 
 		return output
 
