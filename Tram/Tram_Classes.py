@@ -22,3 +22,11 @@ class Ligne:
 			distance += Haversine(*coordsA, *coordsB)
 
 		self.totalDistance = distance
+
+	def __str__(self) -> str:
+		output: str = f"Ligne(\n\ttrack: {len(self.track)} points\n\tNumExploit={self.NumExploit}\n\tLigneID={self.LigneID}\n\tDirection={self.direction}\n\ttotalLength={self.totalDistance}\n)"
+
+		return output
+
+	def __repr__(self) -> str:
+		return self.__str__()
