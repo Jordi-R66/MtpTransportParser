@@ -16,12 +16,16 @@ def OpenJson(filename: str) -> dict:
 def GetListLignes(TramJson: dict) -> list[Ligne]:
 	features: list[dict] = TramJson.get("features")
 
+	Lignes: list[Ligne] = []
+
 	for f in features:
 		L: Ligne = Ligne()
-		geometry: dict | None = f.get("geometry")
 
-		if (geometry != None):
-			track: list[list[float, float]] | None = None
+		geometry: dict | None = f.get("geometry")
+		properties: dict | None = f.get("properties")
+
+		if (type(geometry) == dict):
+			track: list[list[float, float]] | None = geometry.get("coordinates")
 
 			if (track != None):
 				track: list[tuple[float, float]] = [tuple(coords) for coords in track]
@@ -32,5 +36,28 @@ def GetListLignes(TramJson: dict) -> list[Ligne]:
 		else:
 			raise Exception("Error : Couldn't find \"geometry\"")
 
-FICHIER = OpenJson("Datasets/MMM_MMM_LigneTram.json")
-GetListLignes(FICHIER)
+		L.ComputeDistance()
+
+		if (type(properties) == dict):
+			nom_ligne: str | None = properties.get("nom_ligne")
+			num_exploit: int | None = properties.get("num_exploitation")
+			ligne_id: str | None = properties.get("id_lignes_sens")
+
+			if (type(nom_ligne) == str):
+				L.NomLigne = nom_ligne
+
+			if (type(num_exploit) == int):
+				L.NumExploit = num_exploit
+			
+			if (type(ligne_id) == str):
+				L.LigneID = int(ligne_id.replace("IDLTRAM", ""))
+
+		else:
+			raise Exception("Error : Couldn't find \"properties\"")
+
+		Lignes.append(L)
+
+	return Lignes
+
+fichier = OpenJson("Datasets/MMM_MMM_LigneTram.json")
+GetListLignes(fichier)
