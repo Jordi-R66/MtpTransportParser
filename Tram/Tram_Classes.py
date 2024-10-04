@@ -1,3 +1,5 @@
+from ..GeoMaths import *
+
 class Ligne:
 	def __init__(self) -> None:
 		self.track: list[tuple[float, float]] = []
