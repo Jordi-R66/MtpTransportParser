@@ -1,4 +1,4 @@
-from ..GeoMaths import *
+from GeoMaths import *
 
 class Ligne:
 	def __init__(self) -> None:
@@ -11,4 +11,14 @@ class Ligne:
 		self.totalDistance: float = 0.0
 
 	def ComputeDistance(self) -> float:
-		return 0.0
+		distance: float = 0.0
+
+		for i in range(len(self.track[:-1])):
+			j: int = i + 1
+
+			coordsA: tuple[float, float] = self.track[i][::-1]
+			coordsB: tuple[float, float] = self.track[j][::-1]
+
+			distance += Haversine(*coordsA, *coordsB)
+
+		self.totalDistance = distance
