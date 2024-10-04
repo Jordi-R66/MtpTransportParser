@@ -8,7 +8,7 @@ class Ligne:
 		self.NomLigne: str = ""
 		self.direction: int = 0
 
-		self.totalDistance: float = 0.0
+		self.totalLength: float = 0.0
 
 	def ComputeDistance(self) -> float:
 		distance: float = 0.0
@@ -21,10 +21,10 @@ class Ligne:
 
 			distance += Haversine(*coordsA, *coordsB)
 
-		self.totalDistance = distance
+		self.totalLength = distance
 
 	def __str__(self) -> str:
-		output: str = f"Ligne(\n\ttrack: {len(self.track)} points\n\tNumExploit={self.NumExploit}\n\tLigneID={self.LigneID}\n\tDirection={self.direction}\n\ttotalLength={self.totalDistance}\n)"
+		output: str = f"Ligne(\n\ttrack: {len(self.track)} points\n\tNumExploit={self.NumExploit}\n\tLigneID={self.LigneID}\n\tDirection={self.direction}\n\ttotalLength={self.totalLength}\n)"
 
 		return output
 
