@@ -30,3 +30,10 @@ class Ligne:
 
 	def __repr__(self) -> str:
 		return self.__str__()
+
+class Arret:
+	def __init__(self) -> None:
+		self.nom = ""
+		self.GeoCoords: tuple[float, float] = ()
+		self.MtpCoords: tuple[float, float] = ()
+		self.id = 0
