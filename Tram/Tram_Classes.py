@@ -1,3 +1,4 @@
+from __future__ import annotations
 from GeoMaths import *
 
 class Ligne:
@@ -22,6 +23,11 @@ class Ligne:
 			distance += Haversine(*coordsA, *coordsB)
 
 		self.totalLength = distance
+
+	def AddArretToLigne(self, arret: Arret) -> int:
+		"""Ajoute un arrêt au tracé de la ligne et retourne l'index de ces coordonnées dans la liste"""
+
+		return 0
 
 	def __str__(self) -> str:
 		output: str = f"Ligne(\n\tNomLigne={self.NomLigne}\n\ttrack size: {len(self.track)} points\n\tNumExploit={self.NumExploit}\n\tLigneID={self.LigneID}\n\tDirection={self.direction}\n\ttotalLength={self.totalLength}\n)"
